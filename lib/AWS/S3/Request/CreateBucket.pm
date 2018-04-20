@@ -20,7 +20,7 @@ has 'location' => (
 
     # https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUT.html
     # "By default, the bucket is created in the US East (N. Virginia) region."
-    default  => sub { 'us-east-1' },
+    default  => sub { '' },
 );
 
 has '+_expect_nothing' => ( default => 1 );
@@ -30,7 +30,7 @@ sub request {
 
     my $xml = <<"XML";
 <CreateBucketConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/"> 
-  <LocationConstraint>@{[ $s->location || 'us-east-1' ]}</LocationConstraint> 
+  <LocationConstraint>@{[ $s->location || '' ]}</LocationConstraint> 
 </CreateBucketConfiguration>
 XML
 

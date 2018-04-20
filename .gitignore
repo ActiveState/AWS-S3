@@ -7,3 +7,4 @@ MYMETA.json
 Makefile.old
 cover_db
 AWS-S3*.gz
+.DS_Store
